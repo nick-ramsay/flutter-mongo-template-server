@@ -10,7 +10,7 @@ app.use(cors());
 
 const mongoURI = process.env.mongo_uri;
 
-mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(mongoURI);
 
 const messageSchema = new mongoose.Schema({
     message: { type: String },
@@ -35,4 +35,4 @@ app.delete('/messages/:id', async (req, res) => {
     res.json({ success: true });
 });
 
-app.listen(5000, '0.0.0.0', () => console.log('Server running on port 5000'));
+app.listen(5000, '0.0.0.0', () => console.log('💻 🌎 Server running on port 5000 🌎 💻'));
